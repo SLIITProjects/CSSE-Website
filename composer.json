@@ -1,0 +1,12 @@
+{
+    "name": "root/csse-website",
+    "authors": [
+        {
+            "name": "chethiya1996",
+            "email": "chethiya.gunawardana1996@gmail.com"
+        }
+    ],
+    "require": {
+        "kreait/firebase-php": "^4.17.0"
+    }
+}
