@@ -1,3 +1,34 @@
+<?php
+/**# Passengers Route Vice DATA */
+ $barChartData = array(
+	array("label"=> "1/3 Colomobo-Kandy", "y"=> 284935),
+	array("label"=> "22 Anduradhpura-Kandy", "y"=> 256548),
+	array("label"=> "1/44 Jaffna-Colombo", "y"=> 245214),
+	array("label"=> "77 Galle-Kalutara", "y"=> 233464),
+	array("label"=> "88 Kandy-Galle", "y"=> 200285),
+	array("label"=> "103 Kaduwela-Malabe", "y"=> 194422)
+);
+
+/**# Passengers Sep Vs Oct DATA */
+$dataPoints = array( 
+	array("label"=>"September", "symbol" => "September","y"=>46.6),
+    array("label"=>"October", "symbol" => "October","y"=>207.7),
+);
+
+/**# Passengers Daily For OCT */
+$vbarChartData = array( 
+	array("y" => 7,"label" => "Mon" ),
+	array("y" => 12,"label" => "Tue" ),
+	array("y" => 28,"label" => "Wed" ),
+	array("y" => 18,"label" => "THU" ),
+    array("y" => 41,"label" => "FRI" ),
+    array("y" => 15,"label" => "SAT" ),
+    array("y" => 1,"label" => "SUN" )
+);
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,6 +60,68 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
+
+    <script>
+        window.onload = function () {      
+        
+        var chart2 = new CanvasJS.Chart("barChart", {
+            animationEnabled: true,
+            axisX: {
+                title: "Routes",
+                suffix:  "k"
+            },
+            axisY: {
+                title: "Number of Passengers",
+                suffix:  "k"
+            },
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            data: [{
+                type: "column",
+                dataPoints: <?php echo json_encode($barChartData, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light1",
+            animationEnabled: true,
+         
+            data: [{
+                type: "doughnut",
+                indexLabel: "{symbol} - {y}",
+                yValueFormatString: "##",
+                showInLegend: true,
+                legendText: "{label} : {y}",
+                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+
+
+        var chart3 = new CanvasJS.Chart("vbarChart", {
+            animationEnabled: true,
+            axisY: {
+                title: "Number of Passengers",
+                suffix:  "k"
+            },
+            data: [{
+                type: "bar",
+                yValueFormatString: "##0K",
+                indexLabel: "{y}",
+                indexLabelPlacement: "inside",
+                indexLabelFontWeight: "bolder",
+                indexLabelFontColor: "white",
+                dataPoints: <?php echo json_encode($vbarChartData, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+
+        chart2.render();
+        chart.render();
+        chart3.render();
+        
+        }
+    </script>
+
+    
 </head>
 <body>
 
@@ -86,7 +179,52 @@
                 </div>
             </div>
         </nav>
-	</div>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                   
+                    <div class="col-md-12">
+                        <div class="card">
+
+                            <div class="header">
+                                <h4 class="title"># Passengers Route Vice</h4>
+                           </div>
+                            <div class="content">
+                                <div id="barChart" style="height: 370px; width: 100%;"></div>
+                                <script src="./assets/js/canvasjs.min.js"></script>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="col-md-4">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title"># Passengers Sep Vs Oct</h4>
+                            </div>
+                            <div class="content">
+                                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                                <script src="./assets/js/canvasjs.min.js"></script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title"># Passengers Daily For OCT</h4>
+                            </div>
+                            <div class="content">
+                              <div id="vbarChart" style="height: 370px; width: 100%;"></div>
+                              <script src="./assets/js/canvasjs.min.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </div>
+    </div>
 </div>
 
 
