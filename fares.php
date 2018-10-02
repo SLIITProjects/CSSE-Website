@@ -80,7 +80,7 @@ $vbarChartData = array(
                 legendText: "{label}",
                 indexLabelFontSize: 16,
                 indexLabel: "{label} - #percent%",
-                yValueFormatString: "฿#,##0",
+                yValueFormatString: "Rs #,##0",
                 dataPoints: <?php echo json_encode($pieChartData, JSON_NUMERIC_CHECK); ?>
             }]
         });
@@ -225,20 +225,7 @@ $vbarChartData = array(
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-12">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Notes</h4>
-                            </div>
-                            <div class="content">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
+                </div>        
             </div>
         </div>
     </div>
