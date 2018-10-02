@@ -1,3 +1,40 @@
+<?php
+ 
+$pieChartData= array(
+	array("label"=> "1/3 (Colomobo-Kandy)", "y"=> 590),
+	array("label"=> "22 (Anduradhpura-Kandy)", "y"=> 261),
+	array("label"=> "1/44 (Jaffna-Colombo)", "y"=> 158),
+	array("label"=> "77 (Galle-Kalutara)", "y"=> 72),
+	array("label"=> "88 (Kandy-Galle)", "y"=> 191),
+	array("label"=> "103 (Kaduwela-Malabe)", "y"=> 573)
+);
+
+$barChartData = array(
+	array("label"=> "Jan", "y"=> 284935),
+	array("label"=> "Feb", "y"=> 256548),
+	array("label"=> "Mar", "y"=> 245214),
+	array("label"=> "Apr", "y"=> 233464),
+	array("label"=> "May", "y"=> 200285),
+	array("label"=> "Jun", "y"=> 194422),
+	array("label"=> "Jul", "y"=> 180337),
+	array("label"=> "Aug", "y"=> 172340),
+	array("label"=> "Sep", "y"=> 118187),
+	array("label"=> "Oct", "y"=> 107530)
+);
+    
+$vbarChartData = array( 
+	array("y" => 7,"label" => "Mon" ),
+	array("y" => 12,"label" => "Tue" ),
+	array("y" => 28,"label" => "Wed" ),
+	array("y" => 18,"label" => "THU" ),
+    array("y" => 41,"label" => "FRI" ),
+    array("y" => 15,"label" => "SAT" ),
+    array("y" => 1,"label" => "SUN" )
+);
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,6 +65,59 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+
+
+    <script>
+        window.onload = function () {
+        
+        var chart1 = new CanvasJS.Chart("pieChart", {
+            animationEnabled: true,
+            exportEnabled: true,
+            data: [{
+                type: "pie",
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabelFontSize: 16,
+                indexLabel: "{label} - #percent%",
+                yValueFormatString: "฿#,##0",
+                dataPoints: <?php echo json_encode($pieChartData, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+
+        var chart2 = new CanvasJS.Chart("barChart", {
+            animationEnabled: true,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            data: [{
+                type: "column",
+                dataPoints: <?php echo json_encode($barChartData, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+
+        var chart3 = new CanvasJS.Chart("vbarChart", {
+            animationEnabled: true,
+            axisY: {
+                title: "Income (in Rs)",
+                suffix:  "k"
+            },
+            data: [{
+                type: "bar",
+                yValueFormatString: "Rs#,##0K",
+                indexLabel: "{y}",
+                indexLabelPlacement: "inside",
+                indexLabelFontWeight: "bolder",
+                indexLabelFontColor: "white",
+                dataPoints: <?php echo json_encode($vbarChartData, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+        
+        chart1.render();
+        chart2.render();
+        chart3.render();
+
+        }
+    </script>
+
 
 </head>
 <body>
@@ -86,7 +176,72 @@
                 </div>
             </div>
         </nav>
-	</div>
+
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                   
+                    <div class="col-md-12">
+                        <div class="card">
+
+                            <div class="header">
+                                <h4 class="title">Route Vice Income Percentage</h4>
+                           </div>
+
+
+
+                            <div class="content">
+                            
+                                <div id="pieChart" style="height: 370px; width: 100%;"></div>
+                                <script src="./assets/js/canvasjs.min.js"></script>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Monthly Income</h4>
+                            </div>
+                            <div class="content">
+                                <div id="barChart" style="height: 370px; width: 100%;"></div>
+                                <script src="./assets/js/canvasjs.min.js"></script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Average Daily Income For OCT</h4>
+                            </div>
+                            <div class="content">
+                              <div id="vbarChart" style="height: 370px; width: 100%;"></div>
+                              <script src="./assets/js/canvasjs.min.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Notes</h4>
+                            </div>
+                            <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -115,5 +270,7 @@
 
     	});
 	</script>
+
+    
 
 </html>
