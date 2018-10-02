@@ -1,31 +1,18 @@
 <?php
+
+include './classes/routesClass.php';
+
+/**Creating an object from the routesClass in ./classes/routesClass.php*/
+$routesClass = new routesClass();
+
 /**# Passengers Route Vice DATA */
- $barChartData = array(
-	array("label"=> "1/3 Colomobo-Kandy", "y"=> 284935),
-	array("label"=> "22 Anduradhpura-Kandy", "y"=> 256548),
-	array("label"=> "1/44 Jaffna-Colombo", "y"=> 245214),
-	array("label"=> "77 Galle-Kalutara", "y"=> 233464),
-	array("label"=> "88 Kandy-Galle", "y"=> 200285),
-	array("label"=> "103 Kaduwela-Malabe", "y"=> 194422)
-);
+ $barChartData = $routesClass->barchartData();
 
 /**# Passengers Sep Vs Oct DATA */
-$dataPoints = array( 
-	array("label"=>"September", "symbol" => "September","y"=>46.6),
-    array("label"=>"October", "symbol" => "October","y"=>207.7),
-);
+$dataPoints = $routesClass->piechartData();
 
 /**# Passengers Daily For OCT */
-$vbarChartData = array( 
-	array("y" => 7,"label" => "Mon" ),
-	array("y" => 12,"label" => "Tue" ),
-	array("y" => 28,"label" => "Wed" ),
-	array("y" => 18,"label" => "THU" ),
-    array("y" => 41,"label" => "FRI" ),
-    array("y" => 15,"label" => "SAT" ),
-    array("y" => 1,"label" => "SUN" )
-);
-
+$vbarChartData = $routesClass->vbarchartData();
 
 ?>
 
