@@ -6,10 +6,24 @@
  * Time: 2:09 AM
  */
 
+include './FaresData.php';
+
 class faresClass{
 
     /**Pie chart data*/
     public function piechartData(){
+
+
+        $analyze = new FaresData();
+        $arr=$analyze->get();
+
+        foreach($arr as $key => $value){
+            foreach ($value as $k => $val){
+                echo $k.'=>'.$val."\n";
+                echo $val."\n";
+            }
+
+        }
 
         $pieChartData= array(
             array("label"=> "1/3 (Colomobo-Kandy)", "y"=> 590),

@@ -1,6 +1,6 @@
 <?php
 
-include './classes/faresClass.php';
+include './faresClass.php';
 
 /**Creating an object from the faresClass in ./classes/faresClass.php*/
 $faresClass = new faresClass();
