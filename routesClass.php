@@ -1,8 +1,22 @@
 <?php
+
+include './RoutesData.php';
+
 class routesClass{
 
     /**Bar chart data*/
     public function barchartData(){
+
+        $analyze = new RoutesData();
+        $arr=$analyze->get();
+
+        foreach($arr as $key => $value){
+            foreach ($value as $k => $val){
+                echo $k.'=>'.$val."\n";
+                echo $val."\n";
+            }
+
+        }
 
         $barChartData = array(
             array("label"=> "1/3 Colomobo-Kandy", "y"=> 284935),
