@@ -1,6 +1,6 @@
 <?php
 
-include './classes/routesClass.php';
+include './routesClass.php';
 
 /**Creating an object from the routesClass in ./classes/routesClass.php*/
 $routesClass = new routesClass();
