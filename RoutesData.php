@@ -7,11 +7,12 @@
  */
 
 require_once './vendor/autoload.php';
+include_once ('AbstractObserverRoutes.php');
 
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 
-class RoutesData{
+class RoutesData extends AbstractObserverRoutes {
 
     protected $database;
     protected $dbname = 'PaymentHistory';

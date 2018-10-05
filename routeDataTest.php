@@ -21,8 +21,10 @@ class routeDataTest extends TestCase
 
         $actual = null;
         $actual1 = null;
+        $actual3 = null;
 
         foreach ($data as $key => $value) {
+            $actual3 = $key;
             foreach ($value as $ky => $val){
                 $actual=$ky;
                 $actual1=$val;
@@ -30,6 +32,8 @@ class routeDataTest extends TestCase
                 break;
             }
         }
+
+        $this->assertEquals('968765466V', $actual3);
 
         $this->assertEquals('accountId', $actual);
 

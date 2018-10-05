@@ -9,10 +9,12 @@
 
 require_once './vendor/autoload.php';
 
+include_once ('AbstractObserverFares.php');
+
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 
-class FaresData{
+class FaresData extends AbstractObserverFares {
 
     protected $database;
     protected $dbname = 'PaymentHistory';

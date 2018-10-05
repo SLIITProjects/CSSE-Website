@@ -2,7 +2,9 @@
 
 include './RoutesData.php';
 
-class routesClass{
+include_once ('AbstractSubjectRoutes.php');
+
+class routesClass extends AbstractSubjectRoutes {
 
     /**Bar chart data*/
     public function barchartData(){
