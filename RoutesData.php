@@ -12,6 +12,7 @@ include_once ('AbstractObserverRoutes.php');
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 
+/**RoutesData calss extends the AbstractObserverRoutes and implments the get function*/
 class RoutesData extends AbstractObserverRoutes {
 
     protected $database;
@@ -26,9 +27,8 @@ class RoutesData extends AbstractObserverRoutes {
 
     }
 
+    /**Retrieves route data from the DB*/
     public function get(){
-
-
         if($this->database->getReference($this->dbname)->getSnapshot()){
 
             return $this->database->getReference($this->dbname)->getValue();
