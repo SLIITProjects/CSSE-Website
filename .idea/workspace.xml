@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="877a48b0-af24-4db4-b6f9-66318c76fa0f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/AbstractObserverFares.php" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractObserverFares.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AbstractObserverRoutes.php" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractObserverRoutes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AbstractSubjectFares.php" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractSubjectFares.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AbstractSubjectRoutes.php" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractSubjectRoutes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FaresData.php" beforeDir="false" afterPath="$PROJECT_DIR$/FaresData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoutesData.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoutesData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/faresClass.php" beforeDir="false" afterPath="$PROJECT_DIR$/faresClass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faresDataTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/faresDataTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routeDataTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/routeDataTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routesClass.php" beforeDir="false" afterPath="$PROJECT_DIR$/routesClass.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,14 +36,14 @@
           <entry key="dummy" value="9" />
           <entry key="js" value="458" />
           <entry key="json" value="38" />
-          <entry key="php" value="8683" />
+          <entry key="php" value="8712" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="38" />
           <entry key="JavaScript" value="458" />
-          <entry key="PHP" value="8683" />
+          <entry key="PHP" value="8712" />
           <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
@@ -61,7 +53,7 @@
           <entry key="json" value="5" />
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
-          <entry key="php" value="63" />
+          <entry key="php" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -69,7 +61,7 @@
           <entry key="JSON" value="6" />
           <entry key="JavaScript" value="3" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="63" />
+          <entry key="PHP" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions">
@@ -87,11 +79,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RoutesData.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/faresClass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+            <state relative-caret-position="270">
+              <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routesClass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="128" column="11" selection-start-line="128" selection-start-column="11" selection-end-line="128" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -144,13 +145,13 @@
         <option value="$PROJECT_DIR$/AbstractObserverRoutes.php" />
         <option value="$PROJECT_DIR$/AbstractSubjectFares.php" />
         <option value="$PROJECT_DIR$/AbstractSubjectRoutes.php" />
-        <option value="$PROJECT_DIR$/faresClass.php" />
         <option value="$PROJECT_DIR$/FaresData.php" />
         <option value="$PROJECT_DIR$/faresDataTest.php" />
         <option value="$PROJECT_DIR$/routeDataTest.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/routesClass.php" />
         <option value="$PROJECT_DIR$/RoutesData.php" />
+        <option value="$PROJECT_DIR$/faresClass.php" />
+        <option value="$PROJECT_DIR$/routesClass.php" />
       </list>
     </option>
   </component>
@@ -219,7 +220,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
-    <option name="y" value="106" />
+    <option name="y" value="25" />
     <option name="width" value="450" />
     <option name="height" value="662" />
   </component>
@@ -293,12 +294,12 @@
       <workItem from="1538737989619" duration="2008000" />
       <workItem from="1538748619049" duration="4393000" />
       <workItem from="1538757469333" duration="11000" />
-      <workItem from="1538757673363" duration="5836000" />
+      <workItem from="1538757673363" duration="7588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69979000" />
+    <option name="totallyTimeSpent" value="71731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -441,13 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/faresClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1515">
-          <caret line="12" column="78" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FaresData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -483,17 +477,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routesClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="71" selection-start-line="6" selection-start-column="71" selection-end-line="6" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RoutesData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faresClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routesClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="128" column="11" selection-start-line="128" selection-start-column="11" selection-end-line="128" selection-end-column="11" />
         </state>
       </provider>
     </entry>
