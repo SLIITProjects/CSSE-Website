@@ -15,7 +15,7 @@ use Kreait\Firebase\ServiceAccount;
 class FaresData{
 
     protected $database;
-    protected $dbname = 'User';
+    protected $dbname = 'PaymentHistory';
 
     public function __construct(){
 

@@ -80,12 +80,12 @@ $vbarChartData = $faresClass->vbarchartData();
         var chart3 = new CanvasJS.Chart("vbarChart", {
             animationEnabled: true,
             axisY: {
-                title: "Income (in Rs)",
-                suffix:  "k"
+                title: "Income (in Rs)"
+
             },
             data: [{
                 type: "bar",
-                yValueFormatString: "Rs#,##0K",
+                yValueFormatString: "Rs#,##0",
                 indexLabel: "{y}",
                 indexLabelPlacement: "inside",
                 indexLabelFontWeight: "bolder",
@@ -133,12 +133,6 @@ $vbarChartData = $faresClass->vbarchartData();
                         <p>Routes Statistics</p>
                     </a>
                 </li>
-                <li>
-                    <a href="addManager.php">
-                        <i class="pe-7s-user"></i>
-                        <p>Add Manager</p>
-                    </a>
-                </li>
 				</ul>
     	</div>
     </div>
@@ -149,7 +143,7 @@ $vbarChartData = $faresClass->vbarchartData();
                 <div class="collapse navbar-collapse">             
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">
+                            <a href="index.php">
                                 <p>Log out</p>
                             </a>
                         </li>

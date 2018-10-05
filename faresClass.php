@@ -17,22 +17,40 @@ class faresClass{
         $analyze = new FaresData();
         $arr=$analyze->get();
 
+        $pieChartData = array();
+
+        $data=array();
+
+        $datarow=array();
+
         foreach($arr as $key => $value){
             foreach ($value as $k => $val){
-                echo $k.'=>'.$val."\n";
-                echo $val."\n";
+
+                if($k=='route'){
+                    $route=$val;
+                }
+                if($k=='cost'){
+                    $cost=$val;
+                }
+
+            }
+            if(array_key_exists($route, $datarow)){
+                $datarow[$route]=$datarow[$route]+$cost;
+            }
+            else{
+                $datarow[$route]=$cost;
             }
 
         }
 
-        $pieChartData= array(
-            array("label"=> "1/3 (Colomobo-Kandy)", "y"=> 590),
-            array("label"=> "22 (Anduradhpura-Kandy)", "y"=> 261),
-            array("label"=> "1/44 (Jaffna-Colombo)", "y"=> 158),
-            array("label"=> "77 (Galle-Kalutara)", "y"=> 72),
-            array("label"=> "88 (Kandy-Galle)", "y"=> 191),
-            array("label"=> "103 (Kaduwela-Malabe)", "y"=> 573)
-        );
+        foreach($datarow as $key=>$val){
+            $pieChart=array(
+                "label" => $key, "y" => $val
+            );
+            array_push($pieChartData,$pieChart);
+        }
+
+
         return $pieChartData;
 
     }
@@ -40,18 +58,97 @@ class faresClass{
     /**Bar chart data*/
     public function barchartData(){
 
-        $barChartData = array(
-            array("label"=> "Jan", "y"=> 284935),
-            array("label"=> "Feb", "y"=> 256548),
-            array("label"=> "Mar", "y"=> 245214),
-            array("label"=> "Apr", "y"=> 233464),
-            array("label"=> "May", "y"=> 200285),
-            array("label"=> "Jun", "y"=> 194422),
-            array("label"=> "Jul", "y"=> 180337),
-            array("label"=> "Aug", "y"=> 172340),
-            array("label"=> "Sep", "y"=> 118187),
-            array("label"=> "Oct", "y"=> 107530)
+        $analyze = new FaresData();
+        $arr=$analyze->get();
+
+        $janamt=0;
+        $febamt=0;
+        $maramt=0;
+        $apramt=0;
+        $mayamt=0;
+        $junamt=0;
+        $julamt=0;
+        $aguamt=0;
+        $sepamt=0;
+        $octamt=0;
+        $novamt=0;
+        $decamt=0;
+
+        foreach($arr as $key => $value){
+            foreach ($value as $k => $val){
+
+                if($k=='cost'){
+                    $cost=$val;
+                }
+
+                if($k=='date'){
+                    $date=strtotime($val);
+                    $year=date('y', $date);
+                    $cyear=date('y');
+
+                    if($year==$cyear){
+
+                        $month=date('M',$date);
+
+                        if($month=='Jan'){
+                            $janamt=$janamt+$cost;
+                        }
+                        if($month=='Feb'){
+                            $febamt=$febamt+$cost;
+                        }
+                        if($month=='Mar'){
+                            $maramt=$maramt+$cost;
+                        }
+                        if($month=='Apr'){
+                            $apramt=$apramt+$cost;
+                        }
+                        if($month=='May'){
+                            $mayamt=$mayamt+$cost;
+                        }
+                        if($month=='Jun'){
+                            $junamt=$junamt+$cost;
+                        }
+                        if($month=='Jul'){
+                            $julamt=$julamt+$cost;
+                        }
+                        if($month=='Aug'){
+                            $aguamt=$aguamt+$cost;
+                        }
+                        if($month=='Sep'){
+                            $sepamt=$sepamt+$cost;
+                        }
+                        if($month=='Oct'){
+                            $octamt=$octamt+$cost;
+                        }
+                        if($month=='Nov'){
+                            $novamt=$novamt+$cost;
+                        }
+                        if($month=='Dec'){
+                            $decamt=$decamt+$cost;
+                        }
+
+                    }
+                }
+            }
+
+        }
+
+        $barChartData=array(
+            array("label"=> "JAN", "y"=> $janamt),
+            array("label"=> "FEB", "y"=> $febamt),
+            array("label"=> "MAR", "y"=> $maramt),
+            array("label"=> "APR", "y"=> $apramt),
+            array("label"=> "MAY", "y"=> $mayamt),
+            array("label"=> "JUN", "y"=> $junamt),
+            array("label"=> "JUL", "y"=> $julamt),
+            array("label"=> "AUG", "y"=> $aguamt),
+            array("label"=> "SEP", "y"=> $sepamt),
+            array("label"=> "OCT", "y"=> $octamt),
+            array("label"=> "NOV", "y"=> $novamt),
+            array("label"=> "DEC", "y"=> $decamt)
+
         );
+
         return $barChartData;
 
     }
@@ -59,16 +156,83 @@ class faresClass{
     /**Vertical bar chart data*/
     public function vbarchartData(){
 
-        $vbarChartData = array( 
-            array("y" => 7,"label" => "Mon" ),
-            array("y" => 12,"label" => "Tue" ),
-            array("y" => 28,"label" => "Wed" ),
-            array("y" => 18,"label" => "THU" ),
-            array("y" => 41,"label" => "FRI" ),
-            array("y" => 15,"label" => "SAT" ),
-            array("y" => 1,"label" => "SUN" )
+        $analyze = new FaresData();
+        $arr=$analyze->get();
+
+        $vbarChartData = array();
+
+        $data=array();
+
+        $mon=0;
+        $tue=0;
+        $wed=0;
+        $thur=0;
+        $fri=0;
+        $sat=0;
+        $sun=0;
+
+        foreach($arr as $key => $value){
+            foreach ($value as $k => $val){
+
+                if($k=='cost'){
+                    $cost=$val;
+                }
+
+
+                if($k=='date'){
+                   $date=strtotime($val);
+                   $year=date('y', $date);
+                   $cyear=date('y');
+
+                   if($year==$cyear){
+
+                       $month=date('m', $date);
+                       $cmonth=date('m');
+
+                       if($month==$cmonth){
+
+                           $day=date('D', $date);
+
+                           if($day=='Mon'){
+                               $mon=$mon+$cost;
+                           }
+                           if($day=='Tue'){
+                               $tue=$tue+$cost;
+                           }
+                           if($day=='Wed'){
+                               $wed=$wed+$cost;
+                           }
+                           if($day=='Thu'){
+                               $thur=$thur+$cost;
+                           }
+                           if($day=='Fri'){
+                               $fri=$fri+$cost;
+                           }
+                           if($day=='Sat'){
+                               $sat=$sat+$cost;
+                           }
+                           if($day=='Sun'){
+                               $sun=$sun+$cost;
+                           }
+
+                       }
+                   }
+               }
+            }
+        }
+
+
+        $vbarChartData=array(
+            array("y"=>$mon,"label"=>"MON"),
+            array("y"=>$tue,"label"=>"TUE"),
+            array("y"=>$wed,"label"=>"WED"),
+            array("y"=>$thur,"label"=>"THU"),
+            array("y"=>$fri,"label"=>"FRI"),
+            array("y"=>$sat,"label"=>"SAT"),
+            array("y"=>$sun,"label"=>"SUN")
+
         );
-        
+
         return $vbarChartData;
 
     }

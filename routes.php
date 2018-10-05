@@ -54,12 +54,12 @@ $vbarChartData = $routesClass->vbarchartData();
         var chart2 = new CanvasJS.Chart("barChart", {
             animationEnabled: true,
             axisX: {
-                title: "Routes",
-                suffix:  "k"
+                title: "Routes"
+
             },
             axisY: {
-                title: "Number of Passengers",
-                suffix:  "k"
+                title: "Number of Passengers"
+
             },
             theme: "light2", // "light1", "light2", "dark1", "dark2"
             data: [{
@@ -87,12 +87,12 @@ $vbarChartData = $routesClass->vbarchartData();
         var chart3 = new CanvasJS.Chart("vbarChart", {
             animationEnabled: true,
             axisY: {
-                title: "Number of Passengers",
-                suffix:  "k"
+                title: "Number of Passengers"
+
             },
             data: [{
                 type: "bar",
-                yValueFormatString: "##0K",
+                yValueFormatString: "##0",
                 indexLabel: "{y}",
                 indexLabelPlacement: "inside",
                 indexLabelFontWeight: "bolder",
@@ -141,13 +141,7 @@ $vbarChartData = $routesClass->vbarchartData();
                         <p>Routes Statistics</p>
                     </a>
                 </li>
-                <li>
-                    <a href="addManager.php">
-                        <i class="pe-7s-user"></i>
-                        <p>Add Manager</p>
-                    </a>
-                </li>
-				</ul>
+                </ul>
     	</div>
     </div>
 
@@ -157,7 +151,7 @@ $vbarChartData = $routesClass->vbarchartData();
                 <div class="collapse navbar-collapse">             
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">
+                            <a href="index.php">
                                 <p>Log out</p>
                             </a>
                         </li>
@@ -188,7 +182,11 @@ $vbarChartData = $routesClass->vbarchartData();
                 <div class="col-md-4">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title"># Passengers Sep Vs Oct</h4>
+                                <h4 class="title"># Passengers
+                                    <?php
+                                        echo date('M', strtotime('-1 month'))." VS ".date('M');
+                                    ?>
+                                </h4>
                             </div>
                             <div class="content">
                                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
@@ -200,7 +198,12 @@ $vbarChartData = $routesClass->vbarchartData();
                     <div class="col-md-8">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title"># Passengers Daily For OCT</h4>
+
+                                <h4 class="title"># Passengers Daily For
+                                    <?php
+                                        echo date('M');
+                                    ?>
+                                </h4>
                             </div>
                             <div class="content">
                               <div id="vbarChart" style="height: 370px; width: 100%;"></div>
