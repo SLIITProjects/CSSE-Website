@@ -10,6 +10,7 @@ include_once ('./FaresData.php');
 
 use PHPUnit\Framework\TestCase;
 
+/**faresData unit test*/
 class faresDataTest extends TestCase
 {
     public function testRouteData()

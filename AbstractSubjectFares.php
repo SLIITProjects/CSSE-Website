@@ -6,8 +6,10 @@
  * Time: 11:23 PM
  */
 
+/**fares abstract subject class*/
 abstract class AbstractSubjectFares
 {
+    /**functions that generates charts*/
     abstract function piechartData();
     abstract function barchartData();
     abstract function vbarchartData();

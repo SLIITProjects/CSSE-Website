@@ -4,6 +4,7 @@ include './RoutesData.php';
 
 include_once ('AbstractSubjectRoutes.php');
 
+/**routesClass extends AbstractSubjectRoutes and implments the chart functions*/
 class routesClass extends AbstractSubjectRoutes {
 
     /**Bar chart data*/

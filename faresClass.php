@@ -10,6 +10,7 @@ include './FaresData.php';
 
 include_once ('AbstractSubjectFares.php');
 
+/**fares class extends abstractsubjectfares and implements the chart functions*/
 class faresClass extends AbstractSubjectFares {
 
     /**Pie chart data*/

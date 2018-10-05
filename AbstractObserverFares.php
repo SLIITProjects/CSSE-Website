@@ -6,8 +6,10 @@
  * Time: 11:21 PM
  */
 
+/**Fare abstract observer class*/
 abstract class AbstractObserverFares
 {
+    /**get function to retrieve data*/
     abstract function get();
 
 }
