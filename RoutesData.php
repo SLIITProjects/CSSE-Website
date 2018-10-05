@@ -14,7 +14,7 @@ use Kreait\Firebase\ServiceAccount;
 class RoutesData{
 
     protected $database;
-    protected $dbname = 'Accounts';
+    protected $dbname = 'PaymentHistory';
 
     public function __construct(){
 

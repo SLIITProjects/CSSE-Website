@@ -28,7 +28,7 @@
 					<img src="images/img-02.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST" action="">
 					<span class="login100-form-title">
 						TIXORA
 					</span>
@@ -50,7 +50,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" name="formlogin">
 							Login
 						</button>
 					</div>
@@ -80,5 +80,25 @@
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
+
 </body>
 </html>
+
+<?php
+
+if(($_SERVER['REQUEST_METHOD'])=='POST'){
+
+    if(isset($_POST['formlogin'])){
+
+        $email=$_POST['email'];
+        $password=$_POST['pass'];
+
+        if($email=="manager@gmail.com" && $password=="manager"){
+
+            header('Location: ./fares.php');
+        }
+    }
+
+}
+
+?>
