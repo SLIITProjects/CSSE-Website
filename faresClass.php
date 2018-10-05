@@ -8,7 +8,9 @@
 
 include './FaresData.php';
 
-class faresClass{
+include_once ('AbstractSubjectFares.php');
+
+class faresClass extends AbstractSubjectFares {
 
     /**Pie chart data*/
     public function piechartData(){
