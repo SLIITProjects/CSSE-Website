@@ -25,6 +25,8 @@ class faresClass extends AbstractSubjectFares {
         $data=array();
 
         $datarow=array();
+        $route=null;
+        $cost=0;
 
         foreach($arr as $key => $value){
             foreach ($value as $k => $val){
@@ -76,6 +78,7 @@ class faresClass extends AbstractSubjectFares {
         $octamt=0;
         $novamt=0;
         $decamt=0;
+        $cost=0;
 
         foreach($arr as $key => $value){
             foreach ($value as $k => $val){
