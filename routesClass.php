@@ -126,7 +126,7 @@ class routesClass extends AbstractSubjectRoutes {
                 }
 
             }
-           
+
         }
 
         $values=array_count_values($datarow);
